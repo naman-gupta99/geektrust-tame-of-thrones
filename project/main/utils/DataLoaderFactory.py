@@ -1,9 +1,9 @@
-
 import csv
 import os
 
 from globals.configs import RESOURCES_DIR_PATH
 from main.models.Kingdom import Kingdom
+
 
 class DataLoaderFactory:
 
@@ -12,12 +12,15 @@ class DataLoaderFactory:
     """
 
     def get_data_loader(self, sourceType):
-        if sourceType == 'csv':
+        if sourceType == "csv":
             return _load_csv_data
         else:
-            raise NotImplementedError("Data Loader with source type \"" + sourceType +"\" not implemented")
+            raise NotImplementedError(
+                'Data Loader with source type "' + sourceType + '" not implemented'
+            )
 
-def _load_csv_data(kingdom_csv: str):
+
+def _load_csv_data(kingdom_csv_path: str):
 
     """
     Loads Data given in the input csv file present in the resources folder
@@ -25,13 +28,13 @@ def _load_csv_data(kingdom_csv: str):
         Kingdom Name, Kingdom Emblem
     """
 
-    file_path = os.getcwd() + '\\' + RESOURCES_DIR_PATH + '\\' + kingdom_csv
-    
+    file_path = os.getcwd() + "\\" + RESOURCES_DIR_PATH + "\\" + kingdom_csv_path
+
     kingdomArr = []
 
-    with open(file_path, newline='') as csv_file:
-        reader = csv.reader(csv_file, delimiter=',')
+    with open(file_path, newline="") as csv_file:
+        reader = csv.reader(csv_file, delimiter=",")
         for row in reader:
             kingdomArr.append(Kingdom(row[0], row[1]))
 
-    print([(i.name, i.emblem) for i in kingdomArr])
+    return kingdomArr
