@@ -6,7 +6,7 @@ from main.models.Kingdom import Kingdom
 class KingdomRepositoryService(metaclass=abc.ABCMeta):
 
     """
-    Kingdom Repository Service Interface that can be used to build any future Repository Service
+    Kingdom Repository Service Interface ton be used to build any Repository Services
     """
 
     @abc.abstractmethod
@@ -14,7 +14,7 @@ class KingdomRepositoryService(metaclass=abc.ABCMeta):
 
         """
         Get Kingdoms from the Data Repository
-        return Dictionsary(key: Kingdom Name, value: Ki9ngdom Object)
+        return Dictionary(key: Kingdom Name, value: Ki9ngdom Object)
         """
 
         pass
