@@ -4,7 +4,12 @@ from main.controllers.SoutherosRulerController import SoutherosRulerController
 
 
 def main():
+    """
+    Program User Script
 
+    - Gets an instance of the controller
+    - Gets the Output for the input file and prints it to the console
+    """
     controller = SoutherosRulerController()
 
     input_file_path = sys.argv[1]

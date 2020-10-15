@@ -13,17 +13,26 @@ class SoutherosRulerController:
         Initialize Controller object with a Service Object
         """
         self.southeros_ruler_service = get_southeros_ruler_service(
-            RULER_CHECKING_CONDITION
-        )()
+            RULER_CHECKING_CONDITION)()
 
     def check_if_space_is_ruler_using_input_file(self, file_path: str) -> str:
+        """
+        Controller to accept the request
+
+        - Uses Message Reading util to read messages
+        - Uses service to find the output
+        - Returns in the Suitable format
+
+        : file_path : Absolute path to the input file 
+        """
 
         if not os.path.isfile(file_path):
             raise FileNotFoundError('"' + file_path + '" is not a valid path')
 
         messages = read_messages_from_file(file_path)
 
-        ruler = self.southeros_ruler_service.check_ruler_of_southeros("SPACE", messages)
+        ruler = self.southeros_ruler_service.check_ruler_of_southeros(
+            "SPACE", messages)
 
         if ruler == None:
             return "NONE"

@@ -21,6 +21,8 @@ class Kingdom:
         Send Message to the Reciever Kingdom and check if it is an ally
         : reciever_kingdom : Kingdom Object of the Kingdom to whom message is sent
         : message : String message to be sent to the other country
+
+        Returns the response sent by the Reciever Kingdom
         """
 
         return reciever_kingdom.recieve_message(message)
@@ -29,6 +31,8 @@ class Kingdom:
         """
         Check if the message recived has the emblem after decryption
         : message : Recieved string message
+
+        Returns if the kingdom can ally with the Sender kingdom
         """
 
         decrypted_message = self.cipher.decrypt(message, len(self.emblem))
@@ -36,6 +40,11 @@ class Kingdom:
         return self.check_emblem_in_message(decrypted_message)
 
     def check_emblem_in_message(self, message: str) -> bool:
+        """
+        Checks if all the letters of emblem are presnt in the message
+        
+        : message : Message recieved
+        """
 
         emblem_dic = {}
         for ch in self.emblem.upper():

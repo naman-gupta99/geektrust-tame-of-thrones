@@ -21,3 +21,17 @@ Input needs to be read from a text file, and output should be printed to console
   `pip install -r requirements.txt`
 
 ## Usage
+
+- To run the program :  
+  `pip install requirements.txt`  
+  `python -m geektrust <absolute_path_to_input_file>`  
+  _Note: Sample Input File included: sample_input.py_
+
+### Additional Details
+
+- The input file is required to be in the following format:  
+  `KINGDOM_1 SECRET_MSG_TO_KINGDOM_1 KINGDOM_2 SECRET_MSG_TO_KINGDOM_2 … KINGDOM_N SECRET_MSG_TO_KINGDOM_N`
+
+- The program is built on taking a few assumptions:
+  - If multiple messages are sent to a kingdom, even a **Single Accepted Message** would make them ally for our kingdom and all the **Unaccaptable Messages** recieved thereafter would be disregarded.
+- The project is designed for extensible use. This is doen by making a Configuration file _(globals\configs.py)_ where all the configuration parameters are added that can be modified according to the requirements of the end-user.
