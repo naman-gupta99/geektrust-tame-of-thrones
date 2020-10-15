@@ -6,29 +6,25 @@ from main.models.Kingdom import Kingdom
 
 
 class DataLoaderFactory:
-
     """
     Factory class to generate Data Loaders
     """
-
     def get_data_loader(self, sourceType):
         if sourceType == "csv":
             return _load_csv_data
         else:
-            raise NotImplementedError(
-                'Data Loader with source type "' + sourceType + '" not implemented'
-            )
+            raise NotImplementedError('Data Loader with source type "' +
+                                      sourceType + '" not implemented')
 
 
 def _load_csv_data(kingdom_csv_path: str):
-
     """
     Loads Data given in the input csv file present in the resources folder
     The Format:
         Kingdom Name, Kingdom Emblem
     """
 
-    file_path = os.getcwd() + "\\" + RESOURCES_DIR_PATH + "\\" + kingdom_csv_path
+    file_path = os.getcwd() + "/" + RESOURCES_DIR_PATH + "/" + kingdom_csv_path
 
     kingdomArr = []
 
