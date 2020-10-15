@@ -17,5 +17,7 @@ class KingdomDataServiceCsvImpl(KingdomDataService):
         self.kingdom_repository_service = kingdom_repository_service_class()
 
     def get_all_kingdoms(self) -> dict:
-
+        """
+        Returns a Dictionary of Kingdoms using repository service
+        """
         return self.kingdom_repository_service.get_all_kingdoms()
