@@ -12,9 +12,9 @@ class Kingdom:
         : emblem : Emblem of the Kingdom
         """
 
-        self.name = name
-        self.emblem = emblem
-        self.cipher = get_cipher_util(CIPHER_TECHNIQUE)()
+        self.__name = name
+        self.__emblem = emblem
+        self.__cipher = get_cipher_util(CIPHER_TECHNIQUE)()
 
     def send_message(self, reciever_kingdom, message: str) -> bool:
         """
@@ -35,7 +35,7 @@ class Kingdom:
         Returns if the kingdom can ally with the Sender kingdom
         """
 
-        decrypted_message = self.cipher.decrypt(message, len(self.emblem))
+        decrypted_message = self.__cipher.decrypt(message, len(self.__emblem))
 
         return self.check_emblem_in_message(decrypted_message)
 
@@ -47,7 +47,7 @@ class Kingdom:
         """
 
         emblem_dic = {}
-        for ch in self.emblem.upper():
+        for ch in self.__emblem.upper():
             if ch in emblem_dic:
                 emblem_dic[ch] += 1
             else:
@@ -64,4 +64,11 @@ class Kingdom:
         """
         Return String representation of the object
         """
-        return self.name + " " + self.emblem
+        return self.__name + " " + self.__emblem
+
+    """
+    Getters and Setters
+    """
+
+    def get_name(self):
+        return self.__name

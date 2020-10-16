@@ -14,10 +14,10 @@ class KingdomDataServiceCsvImpl(KingdomDataService):
 
         kingdom_repository_service_class = get_kingdom_repository_service(
             DATA_LOADING_SOURCE)
-        self.kingdom_repository_service = kingdom_repository_service_class()
+        self.__kingdom_repository_service = kingdom_repository_service_class()
 
     def get_all_kingdoms(self) -> dict:
         """
         Returns a Dictionary of Kingdoms using repository service
         """
-        return self.kingdom_repository_service.get_all_kingdoms()
+        return self.__kingdom_repository_service.get_all_kingdoms()

@@ -12,7 +12,7 @@ class SoutherosRulerController:
         """
         Initialize Controller object with a Service Object
         """
-        self.southeros_ruler_service = get_southeros_ruler_service(
+        self.__southeros_ruler_service = get_southeros_ruler_service(
             RULER_CHECKING_CONDITION)()
 
     def check_if_space_is_ruler_using_input_file(self, file_path: str) -> str:
@@ -31,7 +31,7 @@ class SoutherosRulerController:
 
         messages = read_messages_from_file(file_path)
 
-        ruler = self.southeros_ruler_service.check_ruler_of_southeros(
+        ruler = self.__southeros_ruler_service.check_ruler_of_southeros(
             "SPACE", messages)
 
         if ruler == None:
