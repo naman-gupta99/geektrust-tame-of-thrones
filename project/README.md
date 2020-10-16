@@ -17,8 +17,6 @@ Input needs to be read from a text file, and output should be printed to console
 ## Requirements
 
 - Python >= v3.8
-- To install project dependency run :  
-  `pip install -r requirements.txt`
 
 ## Usage
 
