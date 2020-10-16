@@ -11,10 +11,10 @@ class Ruler:
         : allies : List of Kingdoms allies to the Ruler Kingdom
         """
 
-        self.ruler_kingdom = ruler_kingdom
-        self.allies = allies
+        self.__ruler_kingdom = ruler_kingdom
+        self.__allies = allies
 
     def __str__(self):
 
-        return self.ruler_kingdom.name + " " + " ".join(
-            [ally.name for ally in self.allies])
+        return self.__ruler_kingdom.get_name() + " " + " ".join(
+            [ally.get_name() for ally in self.__allies])
