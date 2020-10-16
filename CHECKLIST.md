@@ -52,7 +52,7 @@ public class PlayerStateActionFactory {
 - [ ] Use Classes and behaviours indtead of huge if else blocks
 - [ ] Good and Meaningful Naming
 - [ ] Constant Variables instead of Numbers
-- [ ] Use Language conveentions
+- [ ] Use Language conventions
 - [ ] Modularity is a must
 
 ## Data Structures Points

@@ -23,7 +23,6 @@ Input needs to be read from a text file, and output should be printed to console
 ## Usage
 
 - To run the program :  
-  `pip install requirements.txt`  
   `python -m geektrust <absolute_path_to_input_file>`  
   _Note: Sample Input File included: sample_input.py_
 
