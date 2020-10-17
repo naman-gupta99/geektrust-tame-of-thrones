@@ -60,6 +60,10 @@ class Kingdom:
                     del emblem_dic[ch]
         return len(emblem_dic) == 0
 
+    def __eq__(self, other):
+        return self.__name == other.get_name(
+        ) and self.__emblem == other.get_emblem()
+
     def __str__(self):
         """
         Return String representation of the object
@@ -72,3 +76,6 @@ class Kingdom:
 
     def get_name(self):
         return self.__name
+
+    def get_emblem(self):
+        return self.__emblem
