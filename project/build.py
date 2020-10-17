@@ -2,8 +2,11 @@ import sys
 import subprocess
 import unittest
 
-from tests.utils.MessageFileReaderTests import MessageFileReaderTests
 from tests.utils.DataLoaderFactoryTests import DataLoaderFactoryTests
+from tests.utils.KingdomDataServiceFactoryTests import KingdomDataServiceFactoryTests
+from tests.utils.KingdomRepositoryServiceFactoryTests import KingdomRepositoryServiceFactoryTests
+from tests.utils.MessageFileReaderTests import MessageFileReaderTests
+from tests.utils.SoutherosRulerServiceFactoyTests import SoutherosRulerServiceFactoyTests
 
 
 def add_message_file_reader_tests(test_suite):
@@ -18,6 +21,21 @@ def add_data_loader_factory_tests(test_suite):
         [DataLoaderFactoryTests('test_should_return_correct_dictionary')])
 
 
+def add_kingdom_data_service_factory_tests(test_suite):
+    test_suite.addTests(
+        [KingdomDataServiceFactoryTests('test_should_return_csv_impl')])
+
+
+def add_kingdom_repository_service_factory_tests(test_suite):
+    test_suite.addTests(
+        [KingdomRepositoryServiceFactoryTests('test_should_return_csv_impl')])
+
+
+def add_southeros_ruler_service_factory_tests(test_suite):
+    test_suite.addTests(
+        [SoutherosRulerServiceFactoyTests('test_should_return_messages_impl')])
+
+
 def run_test_suite():
 
     test_runner = unittest.TextTestRunner()
@@ -27,6 +45,9 @@ def run_test_suite():
     """
     add_message_file_reader_tests(test_suite)
     add_data_loader_factory_tests(test_suite)
+    add_kingdom_data_service_factory_tests(test_suite)
+    add_kingdom_repository_service_factory_tests(test_suite)
+    add_southeros_ruler_service_factory_tests(test_suite)
 
     test_runner.run(test_suite)
 
