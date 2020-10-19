@@ -1,6 +1,6 @@
 from globals.configs import DATA_LOADING_SOURCE
-from main.services.KingdomDataServices.KingdomDataService import KingdomDataService
-from main.utils.KingdomRepositoryServiceFactory import get_kingdom_repository_service
+from main.services.kingdom_data_services.kingdom_data_service import KingdomDataService
+from main.utils.kingdom_repository_service_factory import get_kingdom_repository_service
 
 
 class KingdomDataServiceCsvImpl(KingdomDataService):

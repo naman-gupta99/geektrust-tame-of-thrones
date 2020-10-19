@@ -1,1 +1,1 @@
-__all__ = ["SeasarCipherUtil"]
+__all__ = ["seasar_cipher_util"]

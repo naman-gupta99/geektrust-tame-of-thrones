@@ -1,9 +1,9 @@
 from globals.configs import DATA_LOADING_SOURCE
-from main.models.Kingdom import Kingdom
-from main.models.Ruler import Ruler
-from main.services.SoutherosRulerServices.SoutherosRulerService import (
+from main.models.kingdom import Kingdom
+from main.models.ruler import Ruler
+from main.services.southeros_ruler_services.southeros_ruler_service import (
     SoutherosRulerService, )
-from main.utils.KingdomDataServiceFactory import get_kingdom_data_service
+from main.utils.kingdom_data_service_factory import get_kingdom_data_service
 
 
 class SoutherosRulerServiceByMessagesImpl(SoutherosRulerService):

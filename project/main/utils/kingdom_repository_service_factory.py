@@ -1,4 +1,4 @@
-from main.repositoryservices.KingdomRepositoryServices import *
+from main.repositoryservices.kingdom_repository_services import *
 
 
 def get_kingdom_repository_service(source_type):
@@ -7,7 +7,7 @@ def get_kingdom_repository_service(source_type):
     : source_type : Type of repository source
     """
     if source_type == "csv":
-        return KingdomRepositoryServiceCsvImpl.KingdomRepositoryServiceCsvImpl
+        return kingdom_repository_service_csv_impl.KingdomRepositoryServiceCsvImpl
     else:
         raise NotImplementedError(
             'Kingdom Repository Service with source type "' + source_type +

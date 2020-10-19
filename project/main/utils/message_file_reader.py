@@ -21,7 +21,7 @@ def read_messages_from_file(file_path):
                     messages_dict[kingdom_name] = set()
                 messages_dict[kingdom_name].add(message)
         except:
-            raise RuntimeError(
+            raise IOError(
                 "The input file was not in the specified format." +
                 " (Please refer to README.md to find the correct file format)")
 
