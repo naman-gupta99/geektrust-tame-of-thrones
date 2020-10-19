@@ -1,6 +1,6 @@
 import sys
 
-from main.controllers.SoutherosRulerController import SoutherosRulerController
+from main.controllers.southeros_ruler_controller import SoutherosRulerController
 
 
 def main():

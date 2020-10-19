@@ -1,6 +1,6 @@
 import unittest
 
-from main.utils.CipherFactory import get_cipher_util
+from main.utils.cipher_factory import get_cipher_util
 from main.utils.ciphers import *
 
 
@@ -14,7 +14,7 @@ class CipherFactoryTests(unittest.TestCase):
     def test_should_return_seasar_cipher(self):
 
         self.assertIsInstance(self.result_cipher,
-                              SeasarCipherUtil.SeasarCipherUtil)
+                              seasar_cipher_util.SeasarCipherUtil)
 
     def test_cipher_should_encrypt_plain_text(self):
 

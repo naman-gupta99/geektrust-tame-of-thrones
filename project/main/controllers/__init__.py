@@ -1,1 +1,1 @@
-__all__ = ['SoutherosRulerController']
+__all__ = ['southeros_ruler_controller']

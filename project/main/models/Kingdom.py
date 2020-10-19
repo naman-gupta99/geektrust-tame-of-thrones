@@ -1,5 +1,5 @@
 from globals.configs import CIPHER_TECHNIQUE
-from main.utils.CipherFactory import get_cipher_util
+from main.utils.cipher_factory import get_cipher_util
 
 
 class Kingdom:

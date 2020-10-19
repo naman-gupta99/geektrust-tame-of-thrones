@@ -2,7 +2,7 @@ import csv
 import os
 
 from globals.configs import RESOURCES_DIR_PATH
-from main.models.Kingdom import Kingdom
+from main.models.kingdom import Kingdom
 
 
 class DataLoaderFactory:

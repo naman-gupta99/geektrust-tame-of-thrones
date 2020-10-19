@@ -1,6 +1,6 @@
 import abc
 
-from main.models.Ruler import Ruler
+from main.models.ruler import Ruler
 
 
 class SoutherosRulerService(metaclass=abc.ABCMeta):

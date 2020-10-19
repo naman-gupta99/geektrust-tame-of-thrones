@@ -1,7 +1,7 @@
 import unittest
 
-from main.services.SoutherosRulerServices import *
-from main.utils.SoutherosRulerServiceFactory import get_southeros_ruler_service
+from main.services.southeros_ruler_services import *
+from main.utils.southeros_ruler_service_factory import get_southeros_ruler_service
 
 
 class SoutherosRulerServiceFactoyTests(unittest.TestCase):
@@ -10,5 +10,5 @@ class SoutherosRulerServiceFactoyTests(unittest.TestCase):
         service = get_southeros_ruler_service('messages')()
 
         self.assertIsInstance(
-            service, SoutherosRulerServiceByMessagesImpl.
+            service, southeros_ruler_service_by_messages_impl.
             SoutherosRulerServiceByMessagesImpl)

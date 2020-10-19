@@ -1,7 +1,7 @@
 import unittest
 
-from main.repositoryservices.KingdomRepositoryServices import *
-from main.utils.KingdomRepositoryServiceFactory import get_kingdom_repository_service
+from main.repositoryservices.kingdom_repository_services import *
+from main.utils.kingdom_repository_service_factory import get_kingdom_repository_service
 
 
 class KingdomRepositoryServiceFactoryTests(unittest.TestCase):
@@ -11,4 +11,4 @@ class KingdomRepositoryServiceFactoryTests(unittest.TestCase):
 
         self.assertIsInstance(
             service,
-            KingdomRepositoryServiceCsvImpl.KingdomRepositoryServiceCsvImpl)
+            kingdom_repository_service_csv_impl.KingdomRepositoryServiceCsvImpl)

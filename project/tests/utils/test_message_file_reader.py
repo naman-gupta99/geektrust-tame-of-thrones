@@ -1,12 +1,12 @@
 import unittest
 
-from main.utils.MessageFileReader import read_messages_from_file
+from main.utils.message_file_reader import read_messages_from_file
 
 
 class MessageFileReaderTests(unittest.TestCase):
 
-    __CORRECT_FORMAT_FILE_PATH = 'tests/resources/utils/MessageFileReader/correct_format_input.txt'
-    __INCORRECT_FORMAT_FILE_PATH = 'tests/resources/utils/MessageFileReader/INcorrect_format_input.txt'
+    __CORRECT_FORMAT_FILE_PATH = 'tests/resources/utils/message_file_reader/correct_format_input.txt'
+    __INCORRECT_FORMAT_FILE_PATH = 'tests/resources/utils/message_file_reader/incorrect_format_input.txt'
 
     def test_should_generate_message_dict(self):
 

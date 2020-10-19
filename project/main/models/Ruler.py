@@ -1,4 +1,4 @@
-from main.models.Kingdom import Kingdom
+from main.models.kingdom import Kingdom
 
 
 class Ruler:

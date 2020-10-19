@@ -1,4 +1,4 @@
-from main.utils.ciphers.CipherUtil import CipherUtil
+from main.utils.ciphers.cipher_util import CipherUtil
 
 
 class SeasarCipherUtil(CipherUtil):

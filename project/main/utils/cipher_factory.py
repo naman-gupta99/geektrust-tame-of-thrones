@@ -8,7 +8,7 @@ def get_cipher_util(cipher_technique):
     """
 
     if cipher_technique == "Seasar":
-        return SeasarCipherUtil.SeasarCipherUtil
+        return seasar_cipher_util.SeasarCipherUtil
     else:
         raise NotImplementedError('Cipher Util of type "' + cipher_technique +
                                   '" not implemented')

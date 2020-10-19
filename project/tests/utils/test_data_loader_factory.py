@@ -1,7 +1,7 @@
 import unittest
 
-from main.models.Kingdom import Kingdom
-from main.utils.DataLoaderFactory import DataLoaderFactory
+from main.models.kingdom import Kingdom
+from main.utils.data_loader_factory import DataLoaderFactory
 
 
 class DataLoaderFactoryTests(unittest.TestCase):
