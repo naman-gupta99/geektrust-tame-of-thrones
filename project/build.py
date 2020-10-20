@@ -3,6 +3,7 @@ import subprocess
 import unittest
 
 from tests.models import *
+from tests.repositoryservices import *
 from tests.utils import *
 
 
@@ -31,6 +32,14 @@ def add_kingdom_data_service_factory_tests(test_suite):
     ])
 
 
+def add_kingdom_repository_service_csv_impl(test_suite):
+    test_suite.addTests([
+        test_kingdom_repository_service_csv_impl.
+        KingdomRepositoryServicesCsvImplTests(
+            'test_should_return_correct_data')
+    ])
+
+
 def add_kingdom_repository_service_factory_tests(test_suite):
     test_suite.addTests([
         test_kingdom_repository_service_factory.
@@ -39,10 +48,13 @@ def add_kingdom_repository_service_factory_tests(test_suite):
 
 
 def add_kingdom_tests(test_suite):
-    test_suite.addTests(
-        [test_kingdom.KingdomTests('test_should_create_correct_object'),
-        test_kingdom.KingdomTests('test_should_ally_on_recieving_correct_message'),
-        test_kingdom.KingdomTests('test_should_recieve_support_from_other_kingdom')])
+    test_suite.addTests([
+        test_kingdom.KingdomTests('test_should_create_correct_object'),
+        test_kingdom.KingdomTests(
+            'test_should_ally_on_recieving_correct_message'),
+        test_kingdom.KingdomTests(
+            'test_should_recieve_support_from_other_kingdom')
+    ])
 
 
 def add_message_file_reader_tests(test_suite):
@@ -73,6 +85,7 @@ def add_all_tests_to_suite(test_suite):
     add_cipher_factory_tests(test_suite)
     add_data_loader_factory_tests(test_suite)
     add_kingdom_data_service_factory_tests(test_suite)
+    add_kingdom_repository_service_csv_impl(test_suite)
     add_kingdom_repository_service_factory_tests(test_suite)
     add_kingdom_tests(test_suite)
     add_message_file_reader_tests(test_suite)
