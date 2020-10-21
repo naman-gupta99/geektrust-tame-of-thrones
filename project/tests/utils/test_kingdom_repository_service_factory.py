@@ -1,6 +1,6 @@
 import unittest
 
-from main.repositoryservices.kingdom_repository_services import *
+from main.repository_services.kingdom_repository_services import *
 from main.utils.kingdom_repository_service_factory import get_kingdom_repository_service
 
 
