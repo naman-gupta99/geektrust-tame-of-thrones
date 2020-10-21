@@ -6,7 +6,9 @@ from main.utils.southeros_ruler_service_factory import get_southeros_ruler_servi
 
 class SoutherosRulerServiceFactoyTests(unittest.TestCase):
     def test_should_return_messages_impl(self):
-
+        """
+        Check if factory returns correct instance
+        """
         service = get_southeros_ruler_service('messages')()
 
         self.assertIsInstance(

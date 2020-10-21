@@ -7,6 +7,9 @@ from main.utils.ciphers.seasar_cipher_util import SeasarCipherUtil
 class KingdomTests(unittest.TestCase):
 
     def test_should_create_correct_object(self):
+        """
+        Should convert to string correctly
+        """
 
         correct_string = 'TheMaroonKingdom Elephant'
 
@@ -18,19 +21,25 @@ class KingdomTests(unittest.TestCase):
 
     @patch.object(SeasarCipherUtil, 'decrypt')
     def test_should_ally_on_recieving_correct_message(self, mocked_decrypt):
+        """
+        Should return Ally response for the correct response
+        """
 
-            mocked_decrypt.return_value = 'elfase phfadsd afadsss dnd ast'
+        mocked_decrypt.return_value = 'elfase phfadsd afadsss dnd ast'
 
-            correct_response = True
+        correct_response = True
 
-            kingdom = Kingdom('TheMaroonKingdom', 'Elephant')
-            result_response = kingdom.recieve_message('mtniam xpnilal inilaaa lvl iab')
+        kingdom = Kingdom('TheMaroonKingdom', 'Elephant')
+        result_response = kingdom.recieve_message('mtniam xpnilal inilaaa lvl iab')
 
-            mocked_decrypt.assert_called_with('mtniam xpnilal inilaaa lvl iab', 8)
-            self.assertEqual(correct_response, result_response)
+        mocked_decrypt.assert_called_with('mtniam xpnilal inilaaa lvl iab', 8)
+        self.assertEqual(correct_response, result_response)
 
     @patch.object(SeasarCipherUtil, 'decrypt')
     def test_should_recieve_support_from_other_kingdom(self, mocked_decrypt):
+        """
+        Should recieve ally message when sends correct message
+        """
 
         mocked_decrypt.return_value = 'elfase phfadsd afadsss dnd ast'
 

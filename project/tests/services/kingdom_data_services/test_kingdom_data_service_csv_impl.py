@@ -11,6 +11,10 @@ class KingdomDataServiceCsvImplTests(unittest.TestCase):
     def test_should_return_correct_kingdom_data(
             self, mocked_get_all_kingdoms):
 
+        """
+        Should get data form repository and return
+        """
+
         mocked_get_all_kingdoms.return_value = {
             'SPACE': Kingdom('SPACE', 'Gorilla'),
             'LAND': Kingdom('LAND', 'Panda'),

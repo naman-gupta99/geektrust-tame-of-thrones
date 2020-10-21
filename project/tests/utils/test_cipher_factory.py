@@ -12,12 +12,16 @@ class CipherFactoryTests(unittest.TestCase):
         self.result_cipher = get_cipher_util(self.__CIPHER_TECHNIQUE)()
 
     def test_should_return_seasar_cipher(self):
-
+        """
+        Check if the factory returns correct object
+        """
         self.assertIsInstance(self.result_cipher,
                               seasar_cipher_util.SeasarCipherUtil)
 
     def test_cipher_should_encrypt_plain_text(self):
-
+        """
+        Cipher should encrypt all the Plain Texts and return Cipher Texts
+        """
         plain_text_and_key_arr = [('HELLO', 3), ('Random Tales', 7),
                                   ('tHeMaAroOnKnIgHt', 2), ('Cosmos', 1),
                                   ('abcdefgh', 4)]
@@ -34,10 +38,13 @@ class CipherFactoryTests(unittest.TestCase):
         self.assertEqual(correct_cipher_text_arr, result_cipher_text_arr)
 
     def test_cipher_should_decrypt_cipher_text(self):
+        """
+        Cipher should decrypt all the Cipher Texts and return Plain Texts
+        """
 
         cipher_text_and_key_arr = [('KHOOR', 3), ('Yhukvt Ahslz', 7),
-                                  ('vJgOcCtqQpMpKiJv', 2), ('Dptnpt', 1),
-                                  ('efghijkl', 4)]
+                                   ('vJgOcCtqQpMpKiJv', 2), ('Dptnpt', 1),
+                                   ('efghijkl', 4)]
         correct_plain_text_arr = [
             'HELLO', 'Random Tales', 'tHeMaAroOnKnIgHt', 'Cosmos', 'abcdefgh'
         ]
