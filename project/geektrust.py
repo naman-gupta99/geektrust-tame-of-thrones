@@ -14,7 +14,7 @@ def main():
 
     input_file_path = sys.argv[1]
 
-    print(controller.check_if_space_is_ruler_using_input_file(input_file_path))
+    print(controller.check_if_kingdom_is_ruler_using_input_file('SPACE', input_file_path))
 
 
 if __name__ == '__main__':

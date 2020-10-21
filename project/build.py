@@ -4,7 +4,7 @@ import unittest
 
 from tests.models import *
 from tests.controllers import *
-from tests.repositoryservices.kingdom_repository_services import *
+from tests.repository_services.kingdom_repository_services import *
 from tests.services.kingdom_data_services import *
 from tests.services.southeros_ruler_services import *
 from tests.utils import *

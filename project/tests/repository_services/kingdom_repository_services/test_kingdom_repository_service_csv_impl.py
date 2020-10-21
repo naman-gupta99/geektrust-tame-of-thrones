@@ -4,10 +4,10 @@ import unittest
 from unittest.mock import patch
 
 from main.models.kingdom import Kingdom
-from main.repositoryservices.kingdom_repository_services.kingdom_repository_service_csv_impl import KingdomRepositoryServiceCsvImpl
+from main.repository_services.kingdom_repository_services.kingdom_repository_service_csv_impl import KingdomRepositoryServiceCsvImpl
 from main.utils.data_loader_factory import DataLoaderFactory
 
-KINGDOM_CSV_PATH = 'tests/resources/kingdom_repository_service/kingdoms.csv'
+KINGDOM_CSV_PATH = 'tests/resources/repository_services/kingdom_repository_service/kingdoms.csv'
 
 
 def mock_data_loader(csv_path):

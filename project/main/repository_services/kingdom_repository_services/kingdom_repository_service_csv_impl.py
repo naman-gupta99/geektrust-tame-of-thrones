@@ -1,5 +1,5 @@
 from globals.configs import DATA_LOADING_SOURCE, KINGDOM_CSV_PATH
-from main.repositoryservices.kingdom_repository_services.kingdom_repository_service import (
+from main.repository_services.kingdom_repository_services.kingdom_repository_service import (
     KingdomRepositoryService, )
 from main.utils.data_loader_factory import DataLoaderFactory
 

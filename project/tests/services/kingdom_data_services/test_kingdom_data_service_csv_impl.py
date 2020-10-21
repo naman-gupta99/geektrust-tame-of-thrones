@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch
 
 from main.models.kingdom import Kingdom
-from main.repositoryservices.kingdom_repository_services.kingdom_repository_service_csv_impl import KingdomRepositoryServiceCsvImpl
+from main.repository_services.kingdom_repository_services.kingdom_repository_service_csv_impl import KingdomRepositoryServiceCsvImpl
 from main.services.kingdom_data_services.kingdom_data_service_csv_impl import KingdomDataServiceCsvImpl
 
 

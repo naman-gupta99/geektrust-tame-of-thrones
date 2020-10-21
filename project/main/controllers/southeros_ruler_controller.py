@@ -13,7 +13,7 @@ class SoutherosRulerController:
         self.__southeros_ruler_service = get_southeros_ruler_service(
             RULER_CHECKING_CONDITION)()
 
-    def check_if_space_is_ruler_using_input_file(self, file_path: str) -> str:
+    def check_if_kingdom_is_ruler_using_input_file(self, kingdom_name:str, file_path: str) -> str:
         """
         Controller to accept the request
 
@@ -30,7 +30,7 @@ class SoutherosRulerController:
         messages = read_messages_from_file(file_path)
 
         ruler = self.__southeros_ruler_service.check_ruler_of_southeros(
-            "SPACE", messages)
+            kingdom_name, messages)
 
         if ruler == None:
             return "NONE"

@@ -1,4 +1,4 @@
-from main.repositoryservices.kingdom_repository_services import *
+from main.repository_services.kingdom_repository_services import *
 
 
 def get_kingdom_repository_service(source_type):

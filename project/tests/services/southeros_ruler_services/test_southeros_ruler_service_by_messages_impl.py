@@ -39,5 +39,20 @@ class SoutherosRulerServiceByMessagesImplTests(unittest.TestCase):
 
         self.assertEqual(correct_ruler, result_ruler)
 
-    def test_should_return_none(self):
-        pass
+    @patch.object(KingdomDataServiceCsvImpl, 'get_all_kingdoms')
+    def test_should_return_none(self, mocked_get_all_kingdoms):
+        
+        mocked_get_all_kingdoms.return_value = self.get_kingdoms()
+
+        correct_ruler = None
+
+        messages = {
+            'SPACE': {'smzsfsdafkssvhmkzy'},
+            'JUNGLE': {'popvlzdddjkclxgbtb'},
+            'SEA': {'pif'}
+        }
+
+        result_ruler = SoutherosRulerServiceByMessagesImpl(
+        ).check_ruler_of_southeros('TheMaroonKingdom', messages)
+
+        self.assertEqual(correct_ruler, result_ruler)
