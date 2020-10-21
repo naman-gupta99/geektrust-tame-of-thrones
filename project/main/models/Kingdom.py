@@ -61,8 +61,11 @@ class Kingdom:
         return len(emblem_dic) == 0
 
     def __eq__(self, other):
-        return self.__name == other.get_name(
-        ) and self.__emblem == other.get_emblem()
+        if self.__name != other.get_name():
+            return False
+        if self.__emblem != other.get_emblem():
+            return False
+        return True
 
     def __str__(self):
         """

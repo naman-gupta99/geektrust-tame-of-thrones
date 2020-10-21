@@ -34,11 +34,12 @@ class SoutherosRulerServiceByMessagesImpl(SoutherosRulerService):
 
         for kingdom_name in messages:
             if kingdom_name != curr_kingdom_name:
-                for message in messages[kingdom_name]:
-                    if curr_kingdom.send_message(kingdoms[kingdom_name],
+                if kingdom_name in kingdoms:
+                    for message in messages[kingdom_name]:
+                        if curr_kingdom.send_message(kingdoms[kingdom_name],
                                                  message):
-                        allies.append(kingdoms[kingdom_name])
-                        break
+                            allies.append(kingdoms[kingdom_name])
+                            break
 
         if len(allies) >= 3:
             return Ruler(curr_kingdom, allies)
