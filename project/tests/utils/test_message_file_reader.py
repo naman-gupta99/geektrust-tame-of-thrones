@@ -9,7 +9,9 @@ class MessageFileReaderTests(unittest.TestCase):
     __INCORRECT_FORMAT_FILE_PATH = 'tests/resources/utils/message_file_reader/incorrect_format_input.txt'
 
     def test_should_generate_message_dict(self):
-
+        """
+        Should read and generate correcct message dictionary
+        """
         correct_messages = {
             'LAND': {'FAIJWJSOOFAMAU', 'dskajd'},
             'ICE': {'STHSTSTVSASOS'},
@@ -22,6 +24,8 @@ class MessageFileReaderTests(unittest.TestCase):
         self.assertDictEqual(correct_messages, result_messages)
 
     def test_should_raise_io_erorr(self):
-
+        """
+        Should Raise IOError
+        """
         with self.assertRaises(IOError):
             read_messages_from_file(self.__INCORRECT_FORMAT_FILE_PATH)

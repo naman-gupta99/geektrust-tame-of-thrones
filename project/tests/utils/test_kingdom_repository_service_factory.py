@@ -6,7 +6,9 @@ from main.utils.kingdom_repository_service_factory import get_kingdom_repository
 
 class KingdomRepositoryServiceFactoryTests(unittest.TestCase):
     def test_should_return_csv_impl(self):
-
+        """
+        Check if factory returns correct instance
+        """
         service = get_kingdom_repository_service('csv')()
 
         self.assertIsInstance(

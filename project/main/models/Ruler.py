@@ -15,13 +15,15 @@ class Ruler:
         self.__allies = allies
 
     def __eq__(self, other):
-
+        """
+        Override Equality
+        """
         if not type(self) is type(other):
             return False
-        
+
         if self.__ruler_kingdom != other.get_ruler_kingdom():
             return False
-        
+
         for i, j in zip(self.__allies, other.get_allies()):
             if i != j:
                 return False
@@ -29,7 +31,9 @@ class Ruler:
         return True
 
     def __str__(self):
-
+        """
+        String Conversion Defined
+        """
         return self.__ruler_kingdom.get_name() + " " + " ".join(
             [ally.get_name() for ally in self.__allies])
 

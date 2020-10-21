@@ -61,6 +61,9 @@ class Kingdom:
         return len(emblem_dic) == 0
 
     def __eq__(self, other):
+        """
+        Override Equality
+        """
         if self.__name != other.get_name():
             return False
         if self.__emblem != other.get_emblem():

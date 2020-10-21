@@ -11,6 +11,9 @@ KINGDOM_CSV_PATH = 'tests/resources/repository_services/kingdom_repository_servi
 
 
 def mock_data_loader(csv_path):
+    """
+    Mock Data loader that loads Data from our testing Repository
+    """
     file_path = KINGDOM_CSV_PATH
 
     kingdomArr = []
@@ -26,6 +29,9 @@ def mock_data_loader(csv_path):
 class KingdomRepositoryServicesCsvImplTests(unittest.TestCase):
     @patch.object(DataLoaderFactory, 'get_data_loader')
     def test_should_return_correct_data(self, mocked_get_data_loader):
+        """
+        Check if the repository returns correct data
+        """
 
         mocked_get_data_loader.return_value = mock_data_loader
 

@@ -13,8 +13,12 @@ class SoutherosRulerControllerTests(unittest.TestCase):
     __INCORRECT_MESSAGES_FILE_PATH = 'tests/resources/controllers/incorrect_messages.txt'
     __INCORRECT_FILE_PATH = 'tests/resources/controllers/incot_messages.txt'
 
-    @patch.object(SoutherosRulerServiceByMessagesImpl, 'check_ruler_of_southeros')
+    @patch.object(SoutherosRulerServiceByMessagesImpl,
+                  'check_ruler_of_southeros')
     def test_should_return_ruler_kingdom_and_allies(self, mocked_check_ruler):
+        """
+        Controller Should return a RulrKingdom and Allies Output for the correct input
+        """
 
         mocked_check_ruler.return_value = Ruler(
             Kingdom('TheMaroonKingdom', 'Knight'), [
@@ -38,8 +42,13 @@ class SoutherosRulerControllerTests(unittest.TestCase):
         mocked_check_ruler.assert_called_with('TheMaroonKingdom', messages)
         self.assertEqual(correct_output, result_output)
 
-    @patch.object(SoutherosRulerServiceByMessagesImpl, 'check_ruler_of_southeros')
+    @patch.object(SoutherosRulerServiceByMessagesImpl,
+                  'check_ruler_of_southeros')
     def test_should_return_none(self, mocked_check_ruler):
+        """
+        Should return NONE for incorrect messages
+        """
+
         mocked_check_ruler.return_value = None
 
         messages = {
@@ -58,6 +67,11 @@ class SoutherosRulerControllerTests(unittest.TestCase):
         self.assertEqual(correct_output, result_output)
 
     def test_should_raise_file_not_found_error(self):
-        
+        """
+        Should Raise FileNotFound Error for incorrect file path
+        """
+
         with self.assertRaises(FileNotFoundError):
-            SoutherosRulerController().check_if_kingdom_is_ruler_using_input_file('TheMaroonKnight', self.__INCORRECT_FILE_PATH)
+            SoutherosRulerController(
+            ).check_if_kingdom_is_ruler_using_input_file(
+                'TheMaroonKnight', self.__INCORRECT_FILE_PATH)

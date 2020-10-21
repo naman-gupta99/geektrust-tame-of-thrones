@@ -8,6 +8,9 @@ from tests.repository_services.kingdom_repository_services import *
 from tests.services.kingdom_data_services import *
 from tests.services.southeros_ruler_services import *
 from tests.utils import *
+"""
+Test Adder Functions
+"""
 
 
 def add_cipher_factory_tests(test_suite):
@@ -84,20 +87,18 @@ def add_ruler_tests(test_suite):
 def add_southeros_ruler_controller_tests(test_suite):
     test_suite.addTests([
         test_southeros_ruler_controller.SoutherosRulerControllerTests(
-            'test_should_return_ruler_kingdom_and_allies'
-        ), test_southeros_ruler_controller.SoutherosRulerControllerTests(
-            'test_should_return_none'
-        )                
+            'test_should_return_ruler_kingdom_and_allies'),
+        test_southeros_ruler_controller.SoutherosRulerControllerTests(
+            'test_should_return_none')
     ])
 
 
 def add_southeros_ruler_service_by_messages_impl_tests(test_suite):
     test_suite.addTests([
-        test_southeros_ruler_service_by_messages_impl.SoutherosRulerServiceByMessagesImplTests(
-            'test_should_return_ruler'
-        ), test_southeros_ruler_service_by_messages_impl.SoutherosRulerServiceByMessagesImplTests(
-            'test_should_return_none'
-        )
+        test_southeros_ruler_service_by_messages_impl.
+        SoutherosRulerServiceByMessagesImplTests('test_should_return_ruler'),
+        test_southeros_ruler_service_by_messages_impl.
+        SoutherosRulerServiceByMessagesImplTests('test_should_return_none')
     ])
 
 
@@ -127,11 +128,17 @@ def add_all_tests_to_suite(test_suite):
 
 
 def run_test_suite():
+    """
+    - Create a Test Suite
+    - Add all tests to the suite
+    - Run the test suite
+    - Return if test ran successfully
+    """
 
     test_runner = unittest.TextTestRunner()
     test_suite = unittest.TestSuite()
     add_all_tests_to_suite(test_suite)
-    test_runner.run(test_suite)
+    return test_runner.run(test_suite).wasSuccessful()
 
 
 if __name__ == "__main__":
@@ -141,6 +148,10 @@ if __name__ == "__main__":
 
     input_file_path = sys.argv[1]
 
-    run_test_suite()
+    if run_test_suite():
+        print("All tests ran succefully.")
+        print('\nRunning Geektrust Program...')
+        print('\nResult:')
+        subprocess.run("python -m geektrust " + input_file_path)
 
-    subprocess.run("python -m geektrust " + input_file_path)
+    
