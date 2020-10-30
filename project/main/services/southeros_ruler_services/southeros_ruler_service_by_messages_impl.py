@@ -3,7 +3,7 @@ from main.models.kingdom import Kingdom
 from main.models.ruler import Ruler
 from main.services.southeros_ruler_services.southeros_ruler_service import (
     SoutherosRulerService, )
-from main.utils.kingdom_data_service_factory import get_kingdom_data_service
+from main.utils.kingdom_repository_service_factory import get_kingdom_repository_service
 
 
 class SoutherosRulerServiceByMessagesImpl(SoutherosRulerService):
@@ -16,7 +16,7 @@ class SoutherosRulerServiceByMessagesImpl(SoutherosRulerService):
         Initialize object by getting the Repository Service Object
         """
 
-        self.__kingdom_data_service = get_kingdom_data_service(
+        self.__kingdom_repository_service = get_kingdom_repository_service(
             DATA_LOADING_SOURCE)()
 
     def check_ruler_of_southeros(self, curr_kingdom_name: str,
@@ -26,7 +26,7 @@ class SoutherosRulerServiceByMessagesImpl(SoutherosRulerService):
         Return Ruler for the current kingdom if it is the Ruler else send None
         """
 
-        kingdoms = self.__kingdom_data_service.get_all_kingdoms()
+        kingdoms = self.__kingdom_repository_service.get_all_kingdoms()
 
         curr_kingdom = kingdoms[curr_kingdom_name]
 

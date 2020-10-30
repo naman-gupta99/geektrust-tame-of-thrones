@@ -5,7 +5,6 @@ import unittest
 from tests.models import *
 from tests.controllers import *
 from tests.repository_services.kingdom_repository_services import *
-from tests.services.kingdom_data_services import *
 from tests.services.southeros_ruler_services import *
 from tests.utils import *
 """
@@ -28,20 +27,6 @@ def add_data_loader_factory_tests(test_suite):
     test_suite.addTests([
         test_data_loader_factory.DataLoaderFactoryTests(
             'test_should_return_correct_dictionary')
-    ])
-
-
-def add_kingdom_data_service_csv_impl_tests(test_suite):
-    test_suite.addTests([
-        test_kingdom_data_service_csv_impl.KingdomDataServiceCsvImplTests(
-            'test_should_return_correct_kingdom_data')
-    ])
-
-
-def add_kingdom_data_service_factory_tests(test_suite):
-    test_suite.addTests([
-        test_kingdom_data_service_factory.KingdomDataServiceFactoryTests(
-            'test_should_return_csv_impl')
     ])
 
 
@@ -115,8 +100,6 @@ def add_all_tests_to_suite(test_suite):
     """
     add_cipher_factory_tests(test_suite)
     add_data_loader_factory_tests(test_suite)
-    add_kingdom_data_service_csv_impl_tests(test_suite)
-    add_kingdom_data_service_factory_tests(test_suite)
     add_kingdom_repository_service_csv_impl_tests(test_suite)
     add_kingdom_repository_service_factory_tests(test_suite)
     add_kingdom_tests(test_suite)

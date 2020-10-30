@@ -3,7 +3,7 @@ from unittest.mock import patch
 
 from main.models.kingdom import Kingdom
 from main.models.ruler import Ruler
-from main.services.kingdom_data_services.kingdom_data_service_csv_impl import KingdomDataServiceCsvImpl
+from main.repository_services.kingdom_repository_services.kingdom_repository_service_csv_impl import KingdomRepositoryServiceCsvImpl
 from main.services.southeros_ruler_services.southeros_ruler_service_by_messages_impl import SoutherosRulerServiceByMessagesImpl
 
 
@@ -20,7 +20,7 @@ class SoutherosRulerServiceByMessagesImplTests(unittest.TestCase):
             'SEA': Kingdom('SEA', 'Shark')
         }
 
-    @patch.object(KingdomDataServiceCsvImpl, 'get_all_kingdoms')
+    @patch.object(KingdomRepositoryServiceCsvImpl, 'get_all_kingdoms')
     def test_should_return_ruler(self, mocked_get_all_kingdoms):
         """
         Should return correct Ruler Object for correct messages
@@ -45,7 +45,7 @@ class SoutherosRulerServiceByMessagesImplTests(unittest.TestCase):
 
         self.assertEqual(correct_ruler, result_ruler)
 
-    @patch.object(KingdomDataServiceCsvImpl, 'get_all_kingdoms')
+    @patch.object(KingdomRepositoryServiceCsvImpl, 'get_all_kingdoms')
     def test_should_return_none(self, mocked_get_all_kingdoms):
         """
         Should return None for incorrect messages or less suppourt
