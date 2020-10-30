@@ -51,3 +51,28 @@ class KingdomTests(unittest.TestCase):
 
         mocked_decrypt.assert_called_with('mtniam xpnilal inilaaa lvl iab', 8)
         self.assertEqual(correct_response, result_response)
+
+    def test_should_evaluate_right_allies(self):
+
+        kingdoms = {
+            'TheMaroonKingdom': Kingdom('TheMaroonKingdom', 'Knight'),
+            'SPACE': Kingdom('SPACE', 'Gorilla'),
+            'JUNGLE': Kingdom('JUNGLE', 'Elephant'),
+            'SEA': Kingdom('SEA', 'Shark')
+        }
+
+        messages = {
+            'SPACE': {'smzsNmpkvhmkzy'},
+            'JUNGLE': {'popMinlavmxgbtb'},
+            'SEA': {'pif'}
+        }
+
+        correct_allies = [kingdoms['SPACE'], kingdoms['JUNGLE']]
+
+        kingdom = Kingdom('TheMaroonKingdom', 'Knight')
+
+        kingdom.evaluate_allies(kingdoms, messages)
+
+        result_allies = kingdom.get_allies()
+
+        self.assertEqual(correct_allies, result_allies)

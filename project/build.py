@@ -51,7 +51,10 @@ def add_kingdom_tests(test_suite):
         test_kingdom.KingdomTests(
             'test_should_ally_on_recieving_correct_message'),
         test_kingdom.KingdomTests(
-            'test_should_recieve_support_from_other_kingdom')
+            'test_should_recieve_support_from_other_kingdom'),
+        test_kingdom.KingdomTests(
+            'test_should_evaluate_right_allies'
+        )
     ])
 
 
