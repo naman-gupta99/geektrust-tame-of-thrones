@@ -1,6 +1,5 @@
 from globals.configs import DATA_LOADING_SOURCE
 from main.models.kingdom import Kingdom
-from main.models.ruler import Ruler
 from main.services.southeros_ruler_services.southeros_ruler_service import (
     SoutherosRulerService, )
 from main.utils.kingdom_repository_service_factory import get_kingdom_repository_service
@@ -20,28 +19,19 @@ class SoutherosRulerServiceByMessagesImpl(SoutherosRulerService):
             DATA_LOADING_SOURCE)()
 
     def check_ruler_of_southeros(self, curr_kingdom_name: str,
-                                 messages: dict) -> Ruler:
+                                 messages: dict) -> Kingdom:
         """
         Send messages to all the kingdoms and check the allies
-        Return Ruler for the current kingdom if it is the Ruler else send None
+        Return Kingdom for the current kingdom if it is the Ruler else send None
         """
 
         kingdoms = self.__kingdom_repository_service.get_all_kingdoms()
 
         curr_kingdom = kingdoms[curr_kingdom_name]
 
-        allies = []
+        curr_kingdom.evaluate_allies(kingdoms, messages)
 
-        for kingdom_name in messages:
-            if kingdom_name != curr_kingdom_name:
-                if kingdom_name in kingdoms:
-                    for message in messages[kingdom_name]:
-                        if curr_kingdom.send_message(kingdoms[kingdom_name],
-                                                 message):
-                            allies.append(kingdoms[kingdom_name])
-                            break
-
-        if len(allies) >= 3:
-            return Ruler(curr_kingdom, allies)
+        if len(curr_kingdom.get_allies()) >= 3:
+            return curr_kingdom
         else:
             return None

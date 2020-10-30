@@ -1,6 +1,6 @@
 import abc
 
-from main.models.ruler import Ruler
+from main.models.kingdom import Kingdom
 
 
 class SoutherosRulerService(metaclass=abc.ABCMeta):
@@ -9,10 +9,10 @@ class SoutherosRulerService(metaclass=abc.ABCMeta):
     """
     @abc.abstractmethod
     def check_ruler_of_southeros(self, current_kingdom_name: str,
-                                 messages: dict) -> Ruler:
+                                 messages: dict) -> Kingdom:
         """
         Use logic to find the Ruler of Southeros
-        return Ruler Object
+        return Kingdom Object
         """
 
         pass

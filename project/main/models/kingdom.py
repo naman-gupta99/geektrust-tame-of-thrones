@@ -15,6 +15,7 @@ class Kingdom:
         self.__name = name
         self.__emblem = emblem
         self.__cipher = get_cipher_util(CIPHER_TECHNIQUE)()
+        self.__allies = []
 
     def send_message(self, reciever_kingdom, message: str) -> bool:
         """
@@ -60,10 +61,25 @@ class Kingdom:
                     del emblem_dic[ch]
         return len(emblem_dic) == 0
 
+    def evaluate_allies(self, kingdoms: dict, messages: dict) -> None:
+
+        for kingdom_name in messages:
+            if kingdom_name != self.__name:
+                if kingdom_name in kingdoms:
+                    for message in messages[kingdom_name]:
+                        if self.send_message(kingdoms[kingdom_name],
+                                                 message):
+                            self.__allies.append(kingdoms[kingdom_name])
+                            break
+
     def __eq__(self, other):
         """
         Override Equality
         """
+
+        if not type(self) is type(other):
+            return False
+
         if self.__name != other.get_name():
             return False
         if self.__emblem != other.get_emblem():
@@ -74,7 +90,7 @@ class Kingdom:
         """
         Return String representation of the object
         """
-        return self.__name + " " + self.__emblem
+        return self.__name + " " + ' '.join([ally.get_name() for ally in self.__allies])
 
     """
     Getters and Setters
@@ -85,3 +101,6 @@ class Kingdom:
 
     def get_emblem(self):
         return self.__emblem
+
+    def get_allies(self):
+        return self.__allies
