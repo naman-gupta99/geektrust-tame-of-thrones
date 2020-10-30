@@ -11,7 +11,7 @@ class KingdomTests(unittest.TestCase):
         Should convert to string correctly
         """
 
-        correct_string = 'TheMaroonKingdom Elephant'
+        correct_string = 'TheMaroonKingdom '
 
         kingdom = Kingdom('TheMaroonKingdom', 'Elephant')
 

@@ -2,7 +2,6 @@ import unittest
 from unittest.mock import patch
 
 from main.models.kingdom import Kingdom
-from main.models.ruler import Ruler
 from main.controllers.southeros_ruler_controller import SoutherosRulerController
 from main.services.southeros_ruler_services.southeros_ruler_service_by_messages_impl import SoutherosRulerServiceByMessagesImpl
 
@@ -20,8 +19,7 @@ class SoutherosRulerControllerTests(unittest.TestCase):
         Controller Should return a RulrKingdom and Allies Output for the correct input
         """
 
-        mocked_check_ruler.return_value = Ruler(
-            Kingdom('TheMaroonKingdom', 'Knight'), [
+        mocked_check_ruler.return_value = Kingdom('TheMaroonKingdom', 'Knight', [
                 Kingdom('SPACE', 'Gorilla'),
                 Kingdom('JUNGLE', 'Elephant'),
                 Kingdom('SEA', 'Shark')

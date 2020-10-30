@@ -6,16 +6,17 @@ class Kingdom:
     """
     Model to represent Kingdom
     """
-    def __init__(self, name: str, emblem: str):
+    def __init__(self, name: str, emblem: str, allies=[]):
         """
         : name : Name of the Kingdom
         : emblem : Emblem of the Kingdom
+        : allies : List of Allies
         """
 
         self.__name = name
         self.__emblem = emblem
         self.__cipher = get_cipher_util(CIPHER_TECHNIQUE)()
-        self.__allies = []
+        self.__allies = allies
 
     def send_message(self, reciever_kingdom, message: str) -> bool:
         """
@@ -62,6 +63,8 @@ class Kingdom:
         return len(emblem_dic) == 0
 
     def evaluate_allies(self, kingdoms: dict, messages: dict) -> None:
+
+        self.__allies = []
 
         for kingdom_name in messages:
             if kingdom_name != self.__name:

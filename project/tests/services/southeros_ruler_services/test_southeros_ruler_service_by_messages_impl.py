@@ -2,7 +2,6 @@ import unittest
 from unittest.mock import patch
 
 from main.models.kingdom import Kingdom
-from main.models.ruler import Ruler
 from main.repository_services.kingdom_repository_services.kingdom_repository_service_csv_impl import KingdomRepositoryServiceCsvImpl
 from main.services.southeros_ruler_services.southeros_ruler_service_by_messages_impl import SoutherosRulerServiceByMessagesImpl
 
@@ -28,7 +27,7 @@ class SoutherosRulerServiceByMessagesImplTests(unittest.TestCase):
 
         mocked_get_all_kingdoms.return_value = self.get_kingdoms()
 
-        correct_ruler = Ruler(Kingdom('TheMaroonKingdom', 'Knight'), [
+        correct_ruler = Kingdom('TheMaroonKingdom', 'Knight', [
             Kingdom('SPACE', 'Gorilla'),
             Kingdom('JUNGLE', 'Elephant'),
             Kingdom('SEA', 'Shark')

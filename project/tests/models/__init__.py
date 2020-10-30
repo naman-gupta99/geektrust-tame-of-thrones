@@ -1,1 +1,1 @@
-__all__ = ['test_kingdom', 'test_ruler']
+__all__ = ['test_kingdom']
